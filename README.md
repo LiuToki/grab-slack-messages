@@ -22,7 +22,7 @@
 - [LICENSE](#license)
 
 ## How to use
-
+### Web Service
 1. Access the following URL.
 https://script.google.com/macros/s/AKfycbxlLvr74frGxPEc2TWjGg1GvTOVj14OaGXEBvWX9MvEKFMf4zvgmXtSQklkcaPLT-5TNA/exec
 1. Input Slack API token.
@@ -31,6 +31,11 @@ https://script.google.com/macros/s/AKfycbxlLvr74frGxPEc2TWjGg1GvTOVj14OaGXEBvWX9
 
 The result.
 ![result](./docs/result.png)
+
+### Requirements
+Add Slack bot on your workspace and channel to get text you want.  
+And setting your Slack bot token scopes as following image.
+![bot_token_scopes_setting](./docs/bot_token_scopes_setting.png)
 
 ## Features
 - Text Only.
