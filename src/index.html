@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <base target="_top">
+        <?!= HtmlService.createHtmlOutputFromFile('style').getContent(); ?>
+    </head>
+    <body>
+        <h1>Grab Slack Messages!</h1>
+        <div>
+            <input id="token" type="text" name="name" value="" placeholder="token" ></input>
+            <input id="url" type="text" name="name" value="" placeholder="url" ></input>
+            <button id="search" onclick="doSearch()">🔍</button>
+        </div>
+        <div>
+            <div id="preview"></div>
+        </div>
+        <script>
+            function displayMessages(srcList) {
+                if (srcList == null) {
+                    document.getElementById('preview').innerHTML = "failed";
+                } else {
+                    document.getElementById('preview').innerHTML = srcList.join("<br>");
+                }
+            }
+            function doSearch() {
+                const token = document.getElementById('token').value;
+                const url = document.getElementById('url').value;
+                google.script.run
+                .withSuccessHandler(displayMessages)
+                .getReplies(token, url);
+            }
+        </script>
+    </body>
+</html>
